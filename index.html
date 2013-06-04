@@ -44,7 +44,7 @@
 <p>The most important factor in getting Plone to run better is to tweak the filesystem. Write speeds on a Raspberry are abysmal. So you want to minimize those. As soon as the filesystem is created, do the following tweaks:</p>
 
 <ul>
-<li>tune2fs /dev/xxx -O has_journal -o journal_data_writeback (where /ev/xxx is your partition). This will disable journaling on the ext4 filesystem. Yes, a recovery after an unclean shutdown will take a bit longer. But hey, this is no mission-critical system we're building.</li>
+<li>tune2fs /dev/xxx -O has_journal -o journal_data_writeback (where /dev/xxx is your partition). This will disable journaling on the ext4 filesystem. Yes, a recovery after an unclean shutdown will take a bit longer. But hey, this is no mission-critical system we're building.</li>
 <li>mount /dev/xxx -o noatime,nodiratime,data=writeback,barrier=0  This will disable some write-intensive options. Note: these are not a good idea on your high-security, high-availability production server...</li>
 </ul><p>Also, go through the various logging functions on the OS. Debian, being that faithful and rock-solid OS, will by default log everything, sometimes in various places. You can probably do without full enterprise-grade logging on your USB-stick. Go through /etc/syslog.conf and see what you can live without, or just set to "critical only".</p>
 
@@ -52,7 +52,9 @@
 <a name="the-plone-stack" class="anchor" href="#the-plone-stack"><span class="octicon octicon-link"></span></a>The Plone stack</h2>
 
 <p>On the Plone side of things, surprisingly little has to be tweaked. Make sure you're using Plone 4.3, or if you're playing with Plone 4.2 upgrade Datetime to 3.0.x in your buildout. This saves a <strong>lot</strong> of memory</p>
-
+<p>I just use the Universal Installer. Use a standalone instance if your device has a single core. If it is a dual- or even quadcore device, you can choose: have 2 ZEO clients, in which case you'll also need
+  a simple loadbalancing to take place (Varnish or NGINX both can handle that). Or you leave the other core for the OS. Experiment, and tell me your results on your device!
+</p>
 <p>Also, you will want to disable as many languages as you can get away with for your purposes. Only enable the ones you need in your buildout.</p>
 
 <p>Finally, disable the Zope access logging (if you're not interested in it, if you plan to put NGINX in front of it, and/or if you intend to use another access logging system like Piwik or GoogleAnalytics anyway)
