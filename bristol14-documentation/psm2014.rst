@@ -1,0 +1,453 @@
+:title: Documentation, it's not an afterthought anymore
+:author: Paul Roeland
+:description: Plone documentation status
+:keywords: docs, plone, developer
+:data-transition-duration: 1500
+
+
+Documentation:
+===============
+
+not an afterthought
+====================
+
+
+----
+
+The documentation for Plone has changed. What does that mean for documenters, integrators, and developers?
+
+----
+
+How can you contribute?
+
+
+And how can your own projects benefit from the lessons learned?
+
+
+----
+
+A few months back...
+=====================
+
+----
+
+developer.plone.org
+-------------------
+
+An organic collection of different docs.
+
+Started out as documentation for developers. But soon included stuff for integrators, themers, sysadmins.
+
+----
+
+plone.org/documentation
+-----------------------
+
+* a hodgepodge of all kind of docs
+
+* mostly out of date
+
+----
+
+There's more!
+==============
+
+plone user manual
+-----------------
+- good, but not many people know it
+- there's even translations
+
+(if you know where they hide...)
+
+----
+
+add-ons
+--------
+- some have nice docs, eg. PFG
+- others are, well, crap
+- wildly differing in style & setup
+
+----
+
+:data-rotate: 90
+
+
+It was time for a change
+========================
+
+
+
+- So we started to prepare
+- and drink coco-loco !
+
+----
+
+:data-rotate: 90
+
+.. image:: image/caipirinhacoco.jpg
+
+----
+
+Plone - the CMS that takes you places
+
+.. image:: image/plonepool.jpg
+
+:data-rotate: 90
+
+-----
+
+Making it happen
+================
+
+----
+
+
+Stroopwafel Sprint
+-------------------
+.. image:: image/plone_cake.jpg
+
+----
+
+The right mix
+=============
+
+A robot master, a documentation expert, a marketing person and 9 others walk into a bar...
+
+----
+
+Cake-driven documentation
+--------------------------
+
+- identified gaps in the documentation
+- a plan for **versioning**.
+- plan: consolidate **all** documentation
+- the **mindmap** to rule all mindmaps
+
+----
+
+Cake is good
+============
+
+- multilingual: use well-known tools
+- select a correct license
+- disabled `knowledge base` on plone.org
+
+----
+
+:data-rotate: 90
+
+.. image:: image/stroop.jpeg
+
+
+
+----
+
+:data-rotate: 90
+
+Cathedral Sprint
+================
+
+- time to take the gloves off
+- get on people's nerves
+- (aka, tell developers to write docs)
+
+----
+
+:data-rotate: 90
+
+.. image:: image/grumpydocs.jpg
+
+----
+
+:data-rotate: 90
+
+DocSprint Munich
+================
+
+Thanks again Max and Alexander !
+
+.. image:: image/munich_docs.JPG
+    :height: 600px
+    :width: 800px
+
+----
+
+:data-rotate: 90
+
+- testing docs on humans
+- (animal testing is **bad**, mmmkay)
+- professional writers - sanity check!
+- create structure
+- copy docs to right place
+
+----
+
+- fix broken links
+- start pulling external docs
+
+*(git sparse is cool...)*
+
+- new docs theme
+- PDF creation via LaTeX
+
+----
+
+Fixed around 368 warning and bugs
+
+Discussed writing guidelines
+
+Cleaning up tickets from the old developer.documentation
+
+----
+
+:data-rotate: 90
+
+.. image:: image/mindmap.jpg
+
+
+
+----
+
+:data-rotate: 45
+
+Beer and Wine Sprint
+====================
+
+.. image:: image/munich.jpg
+
+----
+
+
+- more fixing of links, typos and so on
+- start add missing parts ('new collections')
+- writing guidelines for add-on writers
+
+
+----
+
+:data-rotate: 90
+
+
+First important change
+=======================
+
+----
+
+:data-rotate: 90
+
+License
+-------
+- collective -> plone
+- change license
+- CC 4.0 BY. kthxbye!
+- sign contributor agreement*
+
+\* or not?
+
+----
+
+:data-rotate: 90
+
+docs.plone.org
+==============
+
+basic features
+---------------
+- one landing page for **all** docs
+- including end users, themers, site admins, deployers, developers, core devs
+
+----
+
+fancy stuff
+-----------
+- different plone versions
+- different languages
+- transifex integration
+- screen shot integration
+
+----
+
+collecting more docs
+---------------------
+- include docs for add-ons
+- working pdf creation *
+- 2000 pages of a4 pdf
+
+\* for some definition of 'working'
+
+----
+
+:data-rotate: 90
+
+How it works
+=============
+
+There's two repositories: 
+
+- one with content
+- one with magic
+
+----
+
+repository one [documentation]
+--------------------------------
+- just the plain rst files
+- a **branch** for every version
+- per language **directories**
+
+----
+
+:data-rotate: 90
+
+
+repository two [papyrus]
+--------------------------
+- Is where the magic happens
+- transifex integration
+- pull in external docs (add-ons)
+- robot screenshots
+
+
+----
+
+:data-rotate: 45
+
+Quality insurance
+==================
+- No direct commits to master or branches
+- we only do pull requests **with reviews**
+- LaTeX is a harsh mistress (m/f)...
+
+----
+
+:data-rotate: 45
+
+
+Guidelines
+==========
+
+- **no more PEP8**
+- syntactic linebreaks
+
+*think of the translators*
+
+- documentation is **not** "look at the code"
+
+(yes, we've tested on real devs)
+
+----
+
+:data-rotate: 45
+
+Helper tools
+=============
+
+- mr gutenberg
+- sublime text search
+- firefox search add-on
+- dash/zeal
+
+
+----
+
+:data-rotate: 45
+
+Future plans
+============
+
+- themes fitting with version
+- prettify with iconfonts
+- site-specific screenshots
+- robotize **all** the things
+- integrate pointers into Plone itself
+
+----
+
+:data-rotate: 45
+
+Future plans (technical)
+========================
+
+- hook docs into jenkins
+- test PDF/Epub/HTML generation
+- want PLIPs? Write docs!
+
+----
+
+
+What's missing?
+===============
+
+(well, apart from documentation itself...)
+
+----
+
+Tools: Editor
+=============
+
+- we need a better ReST editor
+- there are a few great ones for MarkDown
+
+they all rely on the same Javascript library for translation. So, we would need one that speaks ReST
+
+
+----
+
+Tools: Robot screenshots
+========================
+
+- Writing Robotests is not hard, but labour intensive
+- yet the benefits are great
+- so we'll need helpers
+
+-----
+
+We're not alone
+===============
+
+- walkhub.net 
+- WriteTheDocs
+
+
+
+----
+
+How to contribute?
+==================
+
+- write documentation
+- write tools
+- help create walkthroughs
+- video & screencasts *(but a11y)*
+
+----
+
+Your own projects
+=================
+
+- Use the guidelines
+- Robot screenshots
+- do not rely on autodocs
+
+----
+
+Plan ahead
+==========
+
+- audiences, audiences, audiences
+- versioning
+- licensing
+- docs.plone.org, readthedocs, private?
+
+
+----
+
+Why bother?
+===========
+
+- because we're the good guys 'n girls
+- how do you pick other stuff?
+- it's actually not **that** much work
+- and it's just pretty when done
+
+
