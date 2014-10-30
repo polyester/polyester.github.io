@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>collective.civicrm</title>
+
+		<meta name="description" content="Talk for Ploneconf 2014">
+		<meta name="author" content="Paul Roeland">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Plone &amp; CiviCRM</h1>
+					<h3>A useful combo</h3>
+					<p>
+						<small>Paul Roeland / <a href="http://twitter.com/polyester">@polyester</a></small>
+					</p>
+				</section>
+				<section>
+					<h1>So, what's CiviCRM?</h1>
+					<img src="assets/CiviCRM.png" width="25%">
+					<ul>
+					<li>Constituent Relation Management</li>
+					<li>Targeted at nonprofits</li>
+					<li>Open source</li>
+					<li>In use by many organizations</li>
+					</ul>
+				</section>
+				<section>
+					<h1>and Plone?</h1>
+					<ul>
+					<li>I guess you know already ;-)</li>
+					<li>Far nicer than the systems CiviCRM tags on to</li>
+					<li>but doesn't do the specific tasks that CiviCRM does, out of the box</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Why not write your own?</h2>
+					<ul>
+					<li>It's like a rite of passage for the nonprofit tech crowd...</li>
+					<li class="fragment">Write address database in Access</li>
+					<li class="fragment">(or FoxPro if you're ancient. DBase III if you've walked with dinosaurs, like me)</li>
+					<li class="fragment">At some point, convert it into crap PHP</li>
+					<li class="fragment">... what do you mean, security?</li>
+					<li class="fragment">Then meet python &amp; Plone</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Addresses are hard!</h1>
+					<ul>
+					<li class="fragment">Stupid Americans/French/insert any country but your own</li>
+					<li class="fragment">Wait, you mean more email addresses?</li>
+					<li class="fragment">Newsletter? Oh bother...</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Like, real hard</h1>
+					<ul>
+					<li class="fragment">We're not just talking addresses here</li>
+					<li class="fragment">Memberships</li>
+					<li class="fragment">Activities</li>
+					<li class="fragment">Groups &amp; tags</li>
+					<li class="fragment">Banking</li>
+					<li class="fragment">Donations</li>
+					<li class="fragment">Events (with entrance fees, volunteers, rooms)</li>
+					<li class="fragment"><em>... wait? You wanna WHAT? Print? Craaaaazy!</em></li>
+					</ul>
+				</section>
+				<section>
+					<h1>You are not special</h1>
+					<h4 class="fragment">Ok, a little Oprah here.</h4><h4 class="fragment"> Yeah, your organization is really special. </h4><h4 class="fragment">Like, super duper goody special. Snaps to you!</h4>
+					<h4 class="fragment">But trust me on this one, your needs in tech aren't</h4>
+				</section>
+				<section>
+					<h1>So, integration is the way forward.</h1>
+					<p>Luckily, CiviCRM has a pretty complete API</p>
+					<p>even with security controls on who gets to see what</p>
+
+				</section>
+				<section>
+					<h2>The beauty of Opensource</h2>
+					<ul>
+					<li class="fragment">Meet a Belgian CiviCRM dev at a hackathon, talk through the options</li>
+					<li class="fragment">Talk to a guy in Seattle who did Salesforce integration</li>
+					<li class="fragment">Talk to a Mexican in Brazil, who likes Documentation Driven Development</li>
+					<li class="fragment">Talk to a Bangladeshi trade unionist, who manages to secure funding</li>
+					<li class="fragment">....</li>
+					<li class="fragment">non-profit!</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Thanks, Simples Consultoria!</h1>
+					<p>just a short while later, we have an 1.0a release!</p>
+					<p><em>- Oh, and it works with Plone 5 also</em></p>
+					<p><a href="https://github.com/collective/collective.civicrm" target="new">collective.civicrm</a></p>
+				</section>
+				<section>
+					<h1>Demo time!</h1>
+				</section>
+				<section>
+					<h1>Where we're at</h1>
+					<ul>
+					<li class="fragment">searching works, with tags &amp; groups</li>
+					<li class="fragment">relations &amp; activities</li>
+					<li class="fragment">API key per user, so can be read from e.g. LDAP or MariaDB</li>
+					<li class="fragment">pretty fast, in real situations faster than CiviCRM itself</li>
+					</ul>
+				</section>
+				<section>
+						<h1>tech babble</h1>
+						<ul>
+						<li>uses gevent to query in parallel</li>
+						<li>only API calls, no PHP harmed in the process </li>
+						<li class="fragment">well...</li>
+						</ul>
+				</section>
+				<section>
+					<h1>Work in progress</h1>
+						<ul>
+						<li>form to add Activities</li>
+						<li>form to add Notes</li>
+						<li>maybe fetch more types of information</li>
+						<li><b>Membership</b> might be a great one, to unlock parts of a site</li>
+						</ul>
+
+				</section>
+				<section>
+					<h2>Not happening (for now)</h2>
+					<ul>
+					<li>Integration with PloneFormGen;<br />using CiviCRM Profiles as Iframe gives better options</li>
+					<li>Complicated stuff like mailings</li>
+					<li>Adding contacts </li>
+					<li>Admin activity</li>
+					<ul>
+				</section>
+				<section>
+					<h1>How can you help?</h1>
+					<ul>
+					<li>Your usecases</li>
+					<li>Funding</li>
+					<li>Testing</li>
+					<li>Feature requests &amp; pull requests</li>
+					<li>light PHP knowledge...</li>
+					</ul>
+				</section>
+				<section>
+					<h1></h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
