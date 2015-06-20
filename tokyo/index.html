@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Plone: your companion into the future</title>
+
+		<meta name="description" content="Keynote at Plone Symposium Tokyo, 2015">
+		<meta name="author" content="Eric Steel, Paul Roeland">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/tokyo.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Plone:</h1>
+					<h3>Your companion on your travels into the future</h3>
+					<p>
+						<small>Eric Steele &amp; Paul Roeland</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>A bit of history...</h2>
+					<p>Back in 2002, Brazil wins the world cup in Yokohama.</p>
+					<p>Firefox wasn't around, we were using Mozilla Suite</p><p>or IE6 on XP...</p><br />
+					<p>and Plone was nearing the 1.0 release status</p>
+						<aside class="notes">
+							We can embellish history a bit more. Retsu and Manabu have been running a Plone usergroup for 10 years!!
+						</aside>
+				</section>
+
+				<section>
+				<blockquote cite="https://plone.org/news/limi-interview-2005">
+						&ldquo;The strongest part of Plone as a technology is that most of its value lies in Plone's vision, goals and approach to solving challenges. The most positive aspect of Plone is actually that the technology is less important - it's not technology for technology's sake.&rdquo;
+					</blockquote>
+					<p><i>Alexander Limi, 2005</i></p>
+						<aside class="notes">
+							All through the history of Plone, it's the people that matter. Alexander Limi, Alan Runyan, but now we've gone through several iterations already.
+						</aside>
+				</section>
+
+				<section>
+				    <h2>Values of Plone community</h2>
+				    <ul>
+				    <li>Quality</li>
+				    <li>Tests</li>
+				    <li>Protect investment in current sites</li>
+				    <li>Usability for real people</li>
+				    <li>Stability</li>
+				    <li>Scale from S to XL</li>
+				    </ul>
+				</section>
+				<section data-background="assets/yamazaki.jpg">
+				<h2 style="color:#4A00C6">Maturing produces results</h2>
+				<h3 style="color:#4A00C6">Some ideas need time.</h3>
+						<aside class="notes"><ul>
+							<li>pendulum swings, the parallel ideas, competing implementations</li>
+							<li>technology (browser!) not ready</li>
+<li>ideas are too radical</li>
+<li>need thinking over by 'real' users.</li>
+<li>there is such a thing as 'too far ahead of its time'</li></ul>
+						</aside>
+				</section>
+
+				<section>
+					<h3>Software with a vision</h3>
+					<p>Discussions and improvements happen:</p><br />
+
+					<p class="fragment">online (IRC, community.plone.org)</p>
+					<p class="fragment">in add-ons</p>
+					<p class="fragment">PLIPs</p>
+					<p class="fragment">Framework team</p>
+					</section>
+
+				<section>
+					<h3>Talking in real life</h3>
+					<p class="fragment">Sprints</p>
+					<p class="fragment">Conferences</p>
+					<p class="fragment">Strategic Summits</p>
+						<aside class="notes">
+							Summit made clear that Plone has many aspects, both technology and non-technology related. All of these need addressing. That makes it complex, but also so rewarding to be part of the community.
+						</aside>
+				</section>
+
+				<section data-background-video="assets/Plog2015.mp4">
+					<h2>Sorrento 2015</h2>
+					<p class="fragment">Backend consolidation</p>
+					<p class="fragment">Frontend JS frameworks</p>
+					<p class="fragment">plone.com and plone.org</p>
+					<p class="fragment">Diversity</p>
+					<p class="fragment">Marketing</p>
+					<p class="fragment">Communication</p>
+						<aside class="notes">
+							These are brief topics that were discussed that go beyond Plone 5. If time/interest, we gladly come back to them at the end or talk to us during sprint. But now, let's move on to Plone 5!
+						</aside>
+				</section>
+
+				<section>
+					<h2>Design &amp; Customization</h2>
+					<p class="fragment">Diazo</p>
+					<aside class="notes">
+					Diazo is the new themeing engine we recently introduced. It makes it easy to map your Plone content into any design template.
+					 Plone 5 will use Diazo for theming by default. We want to encourage you to use it too, so want to make it as easy as possible.
+					</aside>
+					<p class="fragment">Cleaner HTML</p>
+					<aside class="notes">Cleaning up the Plone you see when there’s no theme applied. simpler, semantic html. No more base tag. Layout tables are gone. No more misuse of dl and dt elements. </aside>
+					<p class="fragment">Bettter selectors</p>
+					<aside class="notes">act as hooks for your Diazo rules</aside>
+					<p class="fragment">No built-in grid system</p>
+					<aside class="notes">Removed Deco.gs grid system, once again moving away from our homegrown solutions in favor of commonly-used third party ones. We want you to be able choose your own grid or framework. Like Bootstrap or Foundation.</aside>
+				</section>
+
+				<section>
+					<h2>Simpler &amp; faster templates</h2>
+					<aside class="notes">Plone 5 will use the Chameleon rendering engine. Serves pages around 20% faster. Will require no changes to your existing page templates. But it also does this...</aside>
+
+
+						<pre  class="fragment"><code>
+&lt;h1 tal:attributes="title view/title"
+    tal:content="view/page_name"&gt;
+&lt;/h1&gt;
+						</code></pre>
+
+	               	<pre class="fragment"><code>
+&lt;h1 title="${view/title}"&gt;${view/page_name}&lt;/h1&gt;
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Barceloneta theme</h2>
+					<img data-src="assets/new-site.png" class="stretch">
+					<aside class="notes">
+					* Design work by Albert Casado
+					* CSS 3
+					* LESS
+					* Responsive
+
+					* Accessible
+					* Because it's built on Diazo, you can customize it directly TTW using the theme editor
+					</aside>
+				</section>
+
+				<section>
+					<h2>Barceloneta theme</h2>
+					<img data-src="assets/front-page.png" class="stretch">
+					<aside class="notes">
+					* Design work by Albert Casado
+					* CSS 3
+					* LESS
+					* Responsive
+
+					* Accessible
+					* Because it's built on Diazo, you can customize it directly TTW using the theme editor
+					</aside>
+				</section>
+
+
+				<section>
+					<h2>Barceloneta theme</h2>
+					<img data-src="assets/small-screen-layout.png" class="stretch">
+					<aside class="notes">
+					* Design work by Albert Casado
+					* CSS 3
+					* LESS
+					* Responsive
+
+					* Accessible
+					* Because it's built on Diazo, you can customize it directly TTW using the theme editor
+					</aside>
+				</section>
+
+				<section>
+					<h2>Theme Customization</h2>
+					<img class="stretch" data-src="assets/themeeditor.png" />
+				</section>
+				<section>
+				    <h2>Exposing theme variables</h2>
+				    <img class="stretch" data-src="assets/less-variables.png">
+					<aside class="notes">
+					* Barceloneta will be using LESS in its stylesheets. We’re exposing its variables through the new resource registries control panel. You’ll be able to make adjustments to the base theme here and see them reflected in the site immediately.
+					The really great thing is that because this is reading from the active styles, your custom themes or add-ons can be tweaked here as well.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Toolbar</h2>
+					<video class="stretch" data-autoplay data-src="assets/toolbar.m4v"></video>
+					<aside class="notes">
+					* Replaces
+						* Green bar
+						* Personal tools menu
+						* Manage portlets links
+					Makes editing intuitive, simplifies theming
+					* Separate site design from site functionality
+					* __is customizable__ but you won't mess it up accidentally
+				    * You’ll be able to control the default display of the tool bar. Top of the screen or the right. Icons-only or icon and text. Hidden or expanded by default.
+				    </aside>
+				</section>
+
+
+				<section>
+					<h2>Easier management of your content</h2>
+				</section>
+
+				<section>
+					<h2>Multilingual support fully integrated</h2>
+					<aside class="notes">
+					Plone 5 will be the first release to include multilingual support OOTB.
+					Will handle both Dexterity and Archetypes content
+					Smooth migration from LinguaPlone
+					</aside>
+				</section>
+				<section>
+					<h2>Editor improvements</h2>
+					<video class="stretch" data-autoplay data-src="assets/TinyMCE.m4v"></video>
+
+					<aside class="notes">
+					Updating to TinyMCE 4. Big improvements to the WYSIWYG interface.
+					View styles inline in menus.
+					Improved image/link dialogs
+					drag and drop images
+					far better paste-from-word cleanup
+					Works on mobile devices too.
+
+					With the updates to the editor, we can do things like check for spelling, but also more complex checks for accessibility issues.
+					Require alt , title attributes
+					Flag complex sentences
+
+					</aside>
+				</section>
+				<section>
+					<h2>Tagging</h2>
+					<video class="stretch" data-autoplay data-src="assets/Tagging.m4v"></video>
+					<aside class="notes">Updated the tagging fields to allow searching, reordering and deletion.</aside>
+				</section>
+				<section>
+					<h2>Related Content</h2>
+					<video class="stretch" data-autoplay data-src="assets/relateditems.m4v"></video>
+					<aside class="notes">Updated the related content widget. Easily navigate through folders, select the items you want. Search. Quickly reorder and delete.</aside>
+				</section>
+				<section>
+					<h2>Folder Contents</h2>
+					<video class="stretch" data-autoplay data-src="assets/FolderContents.m4v"></video>
+					<aside class="notes">	* Nathan van Gheem wildcard.foldercontents
+	* Made the folder contents listing substantially more useful. Make changes to individual items or many at once. Add content directly from this view.
+	* Note that this is using the fuzzy dates I mentioned earlier.
+	* Choose which columns you want to display.
+	* Filter the display or the selection to quickly get the content you’re after.
+	* Modify workflow, properties, name and title of multiple items at once.
+	* Upload files via the dialog or just drag and drop them into the folder.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Dexterity</h2>
+				</section>
+
+
+				<section>
+					<h2>Member data: now easy to extend</h2>
+
+					<aside class="notes">
+						Use the Dexterity schema editor to add/modify the fields available during registration.
+					</aside>
+				</section>
+
+
+
+
+				<section>
+					<h2>Security for add-ons</h2>
+					<ul>
+						<li>Automated CSRF (cross-site request forgery) protection</li>
+						<li>Automated click-jacking protection</li>
+						<li>Automatically rotating keyrings</li>
+					</ul>
+					<p class="fragment">Plone will automatically prevent an add-on from doing or allowing dangerous things.</p>
+					<aside class="notes">
+						We’re preventing you from opening yourself up to two of the most common vectors for attacks.
+					</aside>
+				</section>
+
+
+				<section>
+					<h2>Improvements all over the place</h2>
+					<p class="fragment">a real api!</p>
+					<p class="fragment">event recurrence</p>
+					<p class="fragment">lead image</p>
+					<p class="fragment">social media integration</p><aside class="notes">Facebook OpenGraph meta tags</aside>
+					<p class="fragment">date formatting</p><aside class="notes">Handle date formatting in the browser. Localized, both in format and timezone. Option to use "fuzzy" dates ("one day ago" instead of an explicit date)</aside>
+					<p class="fragment">change the logo</p>
+					<p class="fragment">integrating JS scripts</p>
+				</section>
+
+				<section>
+					<h2>Migration path</h2>
+					<aside class="notes">
+					ATCT-> plone.app.contenttypes
+				</section>
+
+				<section>
+					<img data-src="assets/up-and-running.png" class="stretch">
+					<h2>September, 2015</h2>
+					<h3>plone.org/try-five</h3>
+					<aside class="notes">
+					</aside>
+				</section>
+
+
+				<section>
+					<h2>... and beyond!</h2>
+				</section>
+
+				<section data-background-video="assets/Plone5mosaic.mp4,assets/Plone5mosaic.webm" >
+					<h2 style="color:#4A00C6">Mosaic</h2>
+					<p style="color:#4A00C6">A solution that allows dynamic, user-generated composite pages.</p>
+						<aside class="notes">
+							In active development, not quite ready for production yet. But do improve and play! Aiming for 5.x.
+						</aside>
+				</section>
+
+				<section>
+					<h2>Plone Intranet</h2>
+					<ul>
+					<li>9 well-known Plone consultancy firms</li>
+					<li><em>Design First</em></li>
+					<li>Social is key element</li>
+					<li>100% open source, code is &copy; Plone Foundation</li>
+					<li>EDU communities are also moving that way</li>
+					<aside class="notes">
+							On a strict schedule, first release expected this summer. Mention Barcelona example as well.
+						</aside>
+				</section>
+
+
+				<section>
+					<h2>Teams</h2>
+				</section>
+
+				<section>
+					<h2>Documentation</h2>
+					<ul><li>learning and cooperating with other communities</li>
+					<li>#writethedocs community is a great resource</li>
+					<li>Documentation is <em>versioned</em> and can be <em>translated</em></li>
+					<li>Continuous Integration, tests (work in progress)</li>
+					</ul><br />
+					<h3>docs.plone.org</h3>
+				</section>
+
+				<section>
+					<h2>training.plone.org</h2>
+					<p>collectively developed training materials,<br/>started by Philip Bauer and Patrick Gerken</p>
+					<ul><li>Plone 5 and Plone 4 versions</li>
+					<li>Tested on real students...</li>
+					<li>Free for trainers to use, adapt, improve</li>
+					<li>Translatable</li>
+					</ul>
+				</section>
+
+				<section data-background="assets/bucharest1.jpg">
+				</section>
+				<section data-background="assets/bucharest2.jpg">
+				</section>
+				<section data-background="assets/bucharest3.jpg">
+				</section>
+				<section data-background="assets/bucharest4.jpg">
+				</section>
+				<section data-background="assets/bucharest5.jpg">
+				</section>
+				<section data-background="assets/bucharest6.jpg">
+				</section>
+				<section data-background="assets/bucharest7.jpg">
+				</section>
+				<section data-background="assets/bucharest8.jpg">
+				</section>
+
+
+				<section>
+					<h2>Sprint tomorrow!</h2>
+					<p><em>Sprints</em> are a big part of Plone culture</p>
+					<p>They improve the code, but most of all they improve the community</p>
+					<br />
+					<p>ALL levels of experience, and all skills are welcome !!</p>
+					<p>Friendly help is available, so please feel free to join. Not only tomorrow, but any time in the future</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+    			parallaxBackgroundImage: 'assets/Tokyo_Minato_Panorama1.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+    // Parallax background size
+    			parallaxBackgroundSize: '5419px 1080px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+    // Amount of pixels to move the parallax background per slide step,
+    // a value of 0 disables movement along the given axis
+    // These are optional, if they aren't specified they'll be calculated automatically
+    			parallaxBackgroundHorizontal: 200,
+    			// parallaxBackgroundVertical: 50
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
