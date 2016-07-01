@@ -40,7 +40,7 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
+				<section data-background="img/coffee.gif">
 					<h3>Clean Clothes Campaign</h3>
 					<h3>&nbsp;</h3>
 					<h3>developing a practical protocol</h3>
@@ -49,7 +49,7 @@
 				</section>
 
 
-				<section>
+				<section data-background="img/strategy.gif">
 					<h3>Aims</h3>
 <ul>
 <li class="fragment">Reduce risk to partners</li>
@@ -63,11 +63,12 @@
 <h4 class="fragment">how comfortable would I be holding this conversation with a factory owner or police officer sitting at the same table <br /><em>(content security)</em></h4>
 
 				</section>
-				<section data-background="img/metadata.jpg">
+				<section data-background="img/hayden.jpg">
 					<h3 >Next one:</h3>
 <h4 class="fragment">how comfortable would I be holding this conversation <em>within sight</em> of a police officer or factory owner<br /> so they know who is talking to who, when, and for how long <br /><em>(metadata security)</em></h4>
+<h4 class="fragment"><em>"We kill people based on metadata"</em>, Michael Hayden, NSA/CIA</h4>
 				</section>
-				<section data-background="img/eavesdropping.jpg">
+				<section data-background="img/killbillblue.gif">
 					<h3 >Lastly:</h3>
 
 <h4 class="fragment">does it matter if it is a factory owner, a local police officer, or a high-level security service person? <br /><em>(level of adversary)</em></h4>
@@ -103,7 +104,7 @@
 <p>start with pilot program in Pakistan</p>
 				</section>
 
-				<section>
+				<section data-background="img/kittens-science.gif">
 					<h3>Practical implementation</h3>
 
 				</section>
@@ -134,7 +135,10 @@
 <li class="fragment">tbd: can Hangouts play a role as fallback?</li>
 </ul>
 				</section>
-				<section>
+				<section data-background="img/facepalm-uhura.gif">
+				<h3>Really... </h3>
+				</section>
+				<section data-background="img/email.gif">
 					<h3>Email</h3>
 <p>This is difficult, because of ingrained behaviour, and the fact that email is a mixture of one-on-one and group conversation.</p><p> It would be better to replace group email communication with more modern forms (<a href="www.mattermost.org">www.mattermost.org</a> for self-hosted Slack alternative)</p>
 				</section>
@@ -157,8 +161,26 @@
 </ul>
 				</section>
 				<section>
-					<h3>Any in-transit security obtained is obviously meaningless if the security of the partners and their devices is compromised.</h3>
+					<h3>Any in-transit security obtained is <em>meaningless</em> if the security of the partners and their devices is compromised.</h3>
 
+				</section>
+
+				<section data-background="img/surprisekitten.gif">
+				<h1>Passwords?</h1>
+				<h2 class="fragment"><em>nobody remembers more than 3, <br/>so let's re-use them</em></h2>
+				</section>
+				<section data-background="img/number.gif">
+				<h1>Password security</h1>
+				</section>
+				<section>
+				<h3>Password security</h3>
+				<ul>
+				<li class="fragment">still the #1 attack vector</li>
+				<li class="fragment">password <strong>re-use</strong> is the main problem</li>
+				<li class="fragment">entropy rules: longer = better </li>
+				<li class="fragment">use a password manager. I recommend <a href="https://spideroak.com/solutions/encryptr">encryptr</a></li>
+				<li class="fragment">enable 2-factor for your most important accounts</li>
+				</ul>
 				</section>
 				<section>
 					<h3>Office security</h3>
@@ -166,9 +188,35 @@
 <li class="fragment">OS security</li>
 <li class="fragment">also devices <em>(any tablet shared with a teenager <strong>will</strong> contain spyware)</em></li>
 <li class="fragment">backup</li>
-<li class="fragment">contingengy in case of raid</li>
+<li class="fragment">contingency in case of raid</li>
 <li class="fragment">intrusion detection</li>
 </ul>
+				</section>
+				<section data-background="img/fuse.jpg">
+								<h3 style="color:#4A00C6">OS: Windows</h3>
+				<ul>
+				<li class="fragment" style="color:#4A00C6">Do not circumvert security measures</li>
+				<li class="fragment"  style="color:#4A00C6">Win10 is <em>shit</em> for
+				privacy, reasonable on security</li>
+				<li class="fragment" style="color:#4A00C6">Virusscanner is still needed</li>
+				<li class="fragment" style="color:#4A00C6"><em>Ransomware</em> is main threat</li>
+				<li class="fragment" style="color:#4A00C6">Turn off Flash, use alternative PDF reader</li>
+
+				</ul>
+				</section>
+				<section>
+				<h2>OSX and Linux</h2>
+				<h3>much safer, but don't believe you're invulnerable</h3>
+
+				</section>
+				<section data-background="img/cloud.jpg">
+				<h3>Oh yeah, that 'cloud' thing</h3>
+
+				</section>
+				<section>
+				<h3>... but but but ... Googledocs?</h3>
+				<h4 class="fragment">default settings are dangerous</h4>
+				<h4 class="fragment">Finally, viable alternatives are starting to appear</h4>
 				</section>
 				<section>
 					<h3>Travel security (phones, laptops)</h3>
@@ -184,6 +232,7 @@
 <ul>
 <li class="fragment">reformat regularly, at least before any border crossing</li>
 <li class="fragment">encrypted part</li>
+<li class="fragment">hardware encrypted</li>
 </ul>
 				</section>
 
@@ -196,6 +245,14 @@
 </ul>
 				</section>
 				<section>
+				<h3>keeping your (or partners) websites safe</h3>
+				<ul>
+				<li class="fragment">Keep updated</li>
+				<li class="fragment">The software matters (OK I'm partial)</li>
+				<li class="fragment">Prevent against DDOS attacks: <a href="http://www.cloudflare.com">Cloudflare</a> or <a href="https://deflect.ca/">Deflect</a></li>
+				</section>
+
+				<section data-background="img/badsecurity.gif">
 					<h3>future</h3>
 <p>The sorry state of secure applications is <strong>very</strong> much on the radar of the tech community</p>
 <p>so expect improvements, but stay alert</p>
