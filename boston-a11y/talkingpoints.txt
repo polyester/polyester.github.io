@@ -1,0 +1,87 @@
+Access For All
+
+why and how
+
+
+Multiple reasons for accessibility
+(often abbreviated a11y)
+
+it's the law
+
+But there's much more
+
+meet two of your biggest a11y users (google/bing)
+
+
+Situational
+
+Temporary (illness)
+
+temporary (age)
+
+or just because you're on a train
+
+People have different abilities
+
+re-use of content
+
+85% of vids are watched without sound
+
+So, how to go about it?
+
+Automate *all the things* that can be automated
+
+use language checks
+
+use campaign knowledge
+
+Contrast is important, but it's not the only thing
+
+Good structure helps, in many ways
+
+become a keyboard pro
+
+new challenges: svg and icon fonts
+
+new challenges: single page apps
+
+don't be intimidated by the rules
+actually, most of them make sense
+
+rules can change when they don't make sense
+
+aim for good, not for perfection
+(unless you have to)
+
+
+
+Tools:
+- too many to mention
+- but can be divided into groups
+
+for designers:
+NoCoffee
+tota11y
+
+casual:
+tota11y
+axe plugin
+https://desktop.opquast.com/en/
+
+heavy duty:
+asqatasun.org
+aatt (nemo, based on htmlsniffer)
+
+make sure your pipeline includes text checkers as well!!
+
+unexpected benefits:
+- alt tags help SEO
+- structure helps re-use
+- style guides help consistency
+- frameworks help nitty-gritty
+-
+
+
+"It doesn't have to be perfect
+just a little better than yesterday"
+@LeonieWatson
