@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Om Nom Nom</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="img/nachos.gif">
+					<h1 style="color:#00f">The Omnivore Perspective</h1>
+					<h3 style="color:#ff0">Paul Roeland</h3>
+					<h3 style="color:#FF0">@polyester</h3>
+				</section>
+				<section data-background="img/omnomnom.jpg">
+					<h3>Define "Omnivore"...</h3>
+					<ul>
+						<li class="fragment">lots of systems</li>
+						<li class="fragment">build, maintain, renovate, revive, put to sleep</li>
+						<li class="fragment">average lifetime > 3y</li>
+					</ul>
+				</section>
+				<section data-background="img/food-emoji-gif.gif">
+						<h1>Systems?</h1>
+						<ul>
+							<li class="fragment">Plone, Quaive</li>
+							<li class="fragment">Wordpress, Drupal(7/8)</li>
+							<li class="fragment">Wagtail, Mezzanine</li>
+							<li class="fragment">Ghost, Pagekit, Sulu</li>
+							<li class="fragment">Grav, Hugo</li>
+							<li class="fragment">CiviCRM, Mailchimp, Odoo</li>
+						</ul>
+				</section>
+				<section data-background="img/happysandwich.gif">
+						<h1>The Good</h1>
+						<ul>
+							<li class="fragment">No ballast</li>
+							<li class="fragment">Trends I like</li>
+							<li class="fragment">Good practice</li>
+						</ul>
+						<aside class="notes">
+							Trends: simpler design, responsive first,
+						</aside>
+				</section>
+				<section data-background="img/sad4.gif">
+						<h1 style="color:#FF6700">The Bad</h1>
+						<ul>
+							<li class="fragment" style="color:#FF6700">Developer centric, consultantware</li>
+							<li class="fragment" style="color:#FF6700">Brochureware (see <a href="https://gadgetopia.com/post/8670">this post</a>)</li>
+							<li class="fragment" style="color:#FF6700">"does it scale..."</li>
+							<aside class="notes"><p>
+								Consultantware = bad
+								"does it scale" should be shot</p>
+							</aside>
+						</ul>
+
+				</section>
+				<section data-background="img/HopeNope.gif">
+						<h1 style="color:#FF6700">The Ugly</h1>
+						<ul>
+							<li class="fragment" style="color:#FF6700">The worst ideas resurface</li>
+							<li class="fragment" style="color:#FF6700"><em>These people don't work in real organizations, do they?</em></li>
+							<li class="fragment" style="color:#FF6700">One way street / datagrave</li>
+							<li class="fragment" style="color:#FF6700">Security is an afterthought...</li>
+						</ul>
+						<aside class="notes">
+							<p>inline editing. Really? <br/>
+							"it's hard to change the URL after"
+							No export, no dice for me...</p>
+						</aside>
+				</section>
+				<section data-background="img/pusheen-surf.gif">
+					<h1 style="color:#FF6700">What Plone has</h1>
+					<ul>
+						<li class="fragment" style="color:#FF6700">Placeful</li>
+						<li class="fragment" style="color:#FF6700">Collections <span class="fragment highlight-blue">(MOAR!!)</span></li>
+						<li class="fragment" style="color:#FF6700">Workflow</li>
+						<li class="fragment" style="color:#FF6700">Content Rules</li>
+					</ul>
+					<aside class="notes">
+
+					</aside>
+			</section>
+
+
+				<section data-background="img/happy__fairy_tail_by_juvialockser1026-d4h1doi.gif">
+						<h2>Plone's Happy Place</h2>
+						<ul>
+							<li class="fragment">Long-term content</li>
+							<li class="fragment">Skilled editors</li>
+							<li class="fragment">Commitment from org</li>
+							<li class="fragment">Power users</li>
+						</ul>
+						<aside class="notes">
+
+						</aside>
+				</section>
+				<section data-background="img/janeway.gif">
+						<h2>Be a captain!</h2>
+						<aside class="notes"><p>
+							"Make it so", "engage"
+							not "put the navigation onto 7.839, thrust up to 9, etc"</p>
+						</aside>
+				</section>
+				<section data-background="img/pusheen-malefica-GIF.gif">
+					<h2>... or a villain</h2>
+					<aside class="notes">
+						You didn't think she would say *how* to kill those dalmatians...
+					</aside>
+			</section>
+			<section data-background="img/minions.gif">
+				<h2 style="color:#FF6700">And that makes Plone...</h2>
+				<aside class="notes">
+
+				</aside>
+		</section>
+
+
+			<section data-background="img/older.gif">
+						<h1 style="color:#FF6700">Content life</h1>
+						<ul>
+							<li class="fragment" style="color:#FF6700">20% writing outside <div class="fragment">(email, Word files, googledocs)</div></li>
+							<li class="fragment" style="color:#FF6700">5% getting into CMS</li>
+							<li class="fragment" style="color:#FF6700">75% re-arrange, re-use, refer, tag, archive</li>
+						</ul>
+						<aside class="notes">
+
+						</aside>
+					</section>
+				<section data-background="img/pusheen-eat.gif">
+						<h1 style="color:#00f">Content types</h1>
+						<ul>
+							<li class="fragment" style="color:#00f">Text &amp; Image</li>
+							<li class="fragment" style="color:#00f">Embed</li>
+							<li class="fragment" style="color:#00f">Snippets &amp; results</li>
+							<li class="fragment" style="color:#00f">Office &amp; PDF</li>
+						</ul>
+						<aside class="notes">
+
+						</aside>
+				</section>
+				<section data-background="img/pusheen-cookiesgif.gif">
+						<h1 style="color:#00f">Composite pages</h1>
+						<ul>
+							<li class="fragment" style="color:#00f">Hard problem</li>
+							<li class="fragment" style="color:#00f">Remember: be a captain!</li>
+							<li class="fragment" style="color:#00f">WHAT, not HOW</li>
+							<li class="fragment" style="color:#00f">smarter minions</li>
+						</ul>
+						<aside class="notes">
+
+						</aside>
+					</section>
+				<section data-background="img/recursive.gif">
+						<h1 style="color:#ff0">Subsites</h1>
+						<ul>
+							<li class="fragment" style="color:#ff0">Folder, Composite + Theme</li>
+							<li class="fragment" style="color:#ff0">Limited nav <div class="fragment">handmade is good enough</div></li>
+							<li class="fragment" style="color:#ff0">Too big: You're doing it wrong!</li>
+						</ul>
+						<aside class="notes">
+More common than you think
+						</aside>
+					</section>
+				<section data-background="img/illusion.gif">
+						<h1 class="fragment current-visible" style="color:#FF6700">WYSIWYG</h1>
+						<h1 class="fragment" style="color:#FF6700">WISIMLNWYWG</h1>
+<h3 class="fragment fade-up" style="color:#FF6700">What I See Is Most Likely Not What You Will Get</h3>
+						<aside class="notes"><p>
+							The Great illusion<br />
+							Russ Feriday can tell if it's offensive in Welsh</p>
+						</aside>
+					</section>
+					<section data-background="img/ghosteditor.png">
+						<h1 style="color:#FF6700">Diff'rent shores...</h1>
+						<ul>
+							<li class="fragment" style="color:#FF6700">MarkDown: limited, but that's a strength</li>
+							<li class="fragment" style="color:#FF6700">with preview</li>
+							<li class="fragment" style="color:#FF6700">and embed</li>
+						</ul>
+				</section>
+				<section data-background="img/begging.gif">
+					<h1>Stop assuming</h1>
+					<ul>
+						<li class="fragment">"Left column". <em>really?</em></li>
+						<li class="fragment">Be the director!</li>
+						<li class="fragment"><span class="fragment highlight-green">Prio;</span> <span class="fragment highlight-green">displayhint;</span> <span class="fragment highlight-green">alt;</span>  </li>
+					</ul>
+					<aside class="notes">
+						A well-written 'recipe' for a composite page should display on 8K screens just fine, and on a 40$ tablet.
+					</aside>
+			</section>
+				<section data-background="img/octopus.gif">
+						<h1 style="color:#ff0">Forms</h1>
+						<ul>
+							<li class="fragment" style="color:#FF0">all are <span style="font-size:2em">💩</span></li>
+							<li class="fragment" style="color:#FF0">when dev-tools 💔 siteadmin-tools: 😭 </li>
+							<li class="fragment" style="color:#FF0">focus on end-user</li>
+							<li class="fragment" style="color:#FF0">geeky interface for creating: FINE</li>
+						</ul>
+				</section>
+				<aside class="notes"><p>
+					Drupal 7 webform used to be king, drupal 8 UI is horrible. YAML though</p>
+				</aside>
+				<section data-background="img/robots.gif">
+						<h1>System setup</h1>
+						<ul>
+							<li class="fragment">Repeatability</li>
+							<li class="fragment">Containers are here to stay</li>
+							<li class="fragment"><em>"there should be ONE obvious way..."</em></li>
+							<li class="fragment">(OK, two... and dev-tools)</li>
+						</ul>
+					</section>
+				<section data-background="img/risky.gif">
+						<h1 style="color:#FF6700">Configuration</h1>
+						<ul>
+							<li class="fragment" style="color:#FF6700">Readability counts</li>
+							<li class="fragment" style="color:#FF6700">Once in a blue moon...</li>
+							<li class="fragment" style="color:#FF6700">TTW: <span class="fragment" style="color:#FF6700">theming override</span><span class="fragment" style="color:#FF6700">, vocabulary</span><span class="fragment" style="color:#FF6700">, templates</span></li>
+							<li class="fragment" style="color:#FF6700">... but no JS</li>
+						</ul>
+					</section>
+
+				<section data-background="img/sleep.gif">
+						<h1>Don't reinvent wheels</h1>
+				</section>
+				<aside class="notes"><p>
+					History: nearly everything we re-implemented has issues (KSS, resource registry, mockup)</p>
+											</aside>
+				<section data-background="img/beach.gif">
+						<blockquote cite="https://martinfowler.com/bliki/TwoHardThings.html">
+							&ldquo;There are only two hard things in Computer Science: cache invalidation and naming things.
+<br />
+							-- Phil Karlton
+<br />
+							<span class="fragment fade-left">(and off-by-one errors)</span>	&rdquo;
+						</blockquote>
+				</section>
+				<section data-background="img/friends.gif">
+						<h1>Integrate</h1>
+						<aside class="notes"><p>
+							CiviCRM and https://mosaico.io/</p>
+													</aside>
+					</section>
+				<section data-background="img/hochiminh_med.gif">
+						<h1>Rest vs GraphQL</h1>
+						<ul>
+							<li class="fragment">They are <a href="https://philsturgeon.uk/api/2017/01/24/graphql-vs-rest-overview/">not the same</a></li>
+						<li class="fragment">Both are useful</li>
+						</ul>
+				</section>
+				<section data-background="img/colibri.gif">
+						<h2>Wishlist: user</h2>
+						<ul>
+							<li class="fragment">TinyMCE -> Markdown + raw</li>
+							<li class="fragment">Tiles &amp; layout recipes</li>
+							<li class="fragment">Embed made easy</li>
+						</ul>
+						<aside class="notes">
+
+						</aside>
+					</section>
+					<section data-background="img/Cinemagraph_de_fleur_de_pommier.gif">
+						<h2>Gimme more...</h2>
+						<ul>
+							<li class="fragment">Smart media handling</li>
+							<li class="fragment">Consistency in UI</li>
+							<li class="fragment">Cleverer Collections</li>
+						</ul>
+						<aside class="notes">
+
+						</aside>
+					</section>
+					<section data-background="img/fountain.gif">
+						<h2>Teamplayer</h2>
+						<ul>
+							<li class="fragment">Import / Export as core</li>
+							<li class="fragment">Rest AND GraphQL</li>
+							<li class="fragment">Office integration when needed</li>
+							<li class="fragment"><em>although security is hard...</em></li>
+						</ul>
+						<aside class="notes">
+
+						</aside>
+					</section>
+					<section data-background="img/tokyo.gif">
+					<h2 style="color:#ff0">System...</h2>
+					<ul>
+						<li class="fragment" style="color:#ff0">XML -> YAML</li>
+						<li class="fragment" style="color:#ff0">One Zope, One Plone</li>
+						<li class="fragment" style="color:#ff0">CLI</li>
+					</ul>
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section data-background="img/matrix.gif">
+				<h2>system continued</h2>
+				<ul>
+					<li class="fragment">Roundtrip config</li>
+					<li class="fragment">Function &gt; form (for power users)</li>
+					<li class="fragment">Warn when updates needed</li>
+				</ul>
+				<aside class="notes">
+
+				</aside>
+			</section>
+				<section data-background="img/blinken.gif">
+					<h1>MAKE IT SO<br /></h1>
+
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section data-background="img/attention.gif">
+					<h2>@polyester</h2>
+
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
