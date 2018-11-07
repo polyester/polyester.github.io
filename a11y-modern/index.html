@@ -1,0 +1,332 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Modern A11Y</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/a11y.css" id="theme"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet"> 
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="assets/robbie-robot.gif" data-background-size="cover">
+					<h2 >a11y and modern JavaScript</h2>
+				</section>
+				<section data-background-image="assets/godzilla2.gif" data-background-size="cover">
+					<h2>... but isn't JS <em>bad?</em></h2>
+				</section>
+				<section data-background-image="assets/kittysparkle2.gif" data-background-size="contain">
+					<h1>Nope</h1>
+					<h3 class="fragment fade-in-then-semi-out">Using JS is fine</h3>
+					<h3 class="fragment fade-in-then-semi-out">It's 2018... </h3>
+					<h3 class="fragment fade-in-then-semi-out">blind people use smartphones too</h3>
+				</section>
+				<section data-background-image="assets/Gerald_Surge.gif" data-background-size="contain">
+					<h2>recap: a11y</h2>
+					<h4><span class="fragment">visual</span> <span class="fragment">motoric</span> <span class="fragment">cognitive</span> <span class="fragment">situational</span> <span class="fragment">temporal</span></h4>
+				</section>
+				<section data-background-image="assets/gute01.gif">
+					<h2>So, can we just assume the framework takes care?</h2>
+					<em class="fragment">sorry, Gudetama, lazy won't work...</em>
+				</section>
+				<section data-background-image="assets/ufo1.gif">
+					<h2>new and unexpected dangers</h2>
+				</section>
+				<section data-background-image="assets/lajetee.gif">
+					<h2>some familiar tools are useless</h2>
+				</section>
+				<section data-background-image="assets/kitty-palm.gif" data-background-size="contain">
+					<h2>how NOT to a11y</h2>
+					<h2 class="fragment">a.k.a. the Gutenberg gaffe</h2>
+				</section>
+				<section data-background-image="assets/kitty-angry2.gif" data-background-size="contain">
+					<p></p>
+					<blockquote cite="https://wptavern.com/wordpress-accessibility-team-delivers-sobering-assessment-of-gutenberg-we-have-to-draw-a-line">&ldquo;It currently requires 34 separate keyboard stops, and even more if the tester doesn’t have prior knowledge of how to navigate Gutenberg.&rdquo;</blockquote>
+				</section>
+				<section data-background-image="assets/godzilla1.gif">
+					<h2>let's fight the good fight!</h2>
+				</section>
+				<section data-background-image="assets/do-weird.gif" data-background-size="contain">
+					<h3>how to implement in React?</h3>
+				</section>
+
+				<section data-background-image="assets/totoro-top.gif" data-background-size="contain">
+					<h2>semantic jsx creates semantic html</h2>
+				</section>
+				<section data-background-image="assets/shake-godzilla.gif"> <h1>JSX and ARIA</h1>
+				<p>All ARIA attributes are valid JSX props!</p>
+				<pre><code class="html" data-trim="">
+						&lt;input id={nameId} aria-label={accessibleLabel} type="text" /&gt;
+				</code></pre>
+			</section>
+			<section data-background-image="assets/totori-sad.gif">
+				<h2 class="fragment">Semantic JSX and HTML</h2>
+<div class="flex-grid fragment">
+<pre class="flex-col">
+<h2 style="font-family: Verdana; text-align: center; margin: 0; font-weight: bold; border-bottom-color: black; border-bottom-width: 2px; border-bottom-style: solid; padding-bottom: 10px;">Non-semantic</h2>
+<code class="html" data-trim="">
+<div>
+	&lt;Navigation /&gt;
+</div>
+<div>
+	&lt;SideMenu /&gt;
+</div>
+<div>
+	&lt;MainContent /&gt;
+	&lt;div className="button-style"
+			 onClick={handler}&gt;
+			 Save selection
+	</div>
+&lt;/div&gt;
+</code></pre>
+
+</div>
+			</section>
+
+
+			<section data-background-image="assets/totori-happy.gif">
+				<h2 class="fragment">Semantic JSX and HTML</h2>
+<div class="flex-grid fragment">
+
+<pre class="flex-col">
+<h2 style="font-family: Verdana; text-align: center; margin: 0; font-weight: bold; border-bottom-color: black; border-bottom-width: 2px; border-bottom-style: solid; padding-bottom: 10px;">Semantic</h3>
+<code class="html" data-trim="">
+<nav>
+	&lt;Navigation /&gt;
+</nav>
+<aside>
+	&lt;SideMenu /&gt;
+</aside>
+<main>
+	&lt;MainContent /&gt;
+	&lt;button type="button"
+					onClick={handler}&gt;
+			 Save selection
+	&lt;/button&gt;
+</main>
+</code></pre>
+</div>
+			</section>
+
+			<section data-background-image="assets/kitty-announce.gif" data-background-size="contain">
+			<h2>Messaging</h2> 
+			<p>Normally we'd use ARIA live</p>
+			<pre><code class="html">
+&lt;div aria-live=&quot;polite&quot;
+	aria-atomic=&quot;true&quot;
+	aria-relevant=&quot;additions&quot;&gt;
+		 **Notification messages goes here**
+&lt;/div&gt;
+</code></pre>
+			</section>
+			<section data-background-image="assets/bear-swimming.gif">
+				<h2>However, React makes this difficult</h2>
+				<img class= "fragment" src="assets/arialive.png"/>
+			</section>
+
+			<section data-background-image="assets/gute08.gif">
+				<h2>remember:</h2>
+				<h2>routing does NOT get announced</h2>
+			</section>			
+			<section data-background-image="assets/focus.gif">
+				<h2>What you need is...</h2>
+				<h2 class="fragment fade-in-then-semi-out">FOCUS</h2>
+				<h2 class="fragment fade-in-then-semi-out">FOCUS</h2>
+				<h2 class="fragment fade-in-then-semi-out">FOCUS</h2>
+			</section>
+
+
+
+
+				<section data-background-image="assets/no-ok.gif" data-background-size="contain">
+					<div class="flex-grid">
+						<div class="flex-col" style="background: transparent;">
+						<h2 style="text-align: center; margin: 0;">Inaccessible</h2>
+						</div>
+						<div class="flex-col" style="background: transparent;">
+						<h2 style="text-align: center; margin: 0;">Accessible</h2>
+						</div>
+						</div>
+						<div class="flex-grid fragment">
+									<pre class="flex-col"><code class="css" data-trim="">
+						:focus {
+							outline: 0; //Or none
+						}
+									</code></pre>
+							   <pre class="flex-col"><code class="css" data-trim="">
+							   :focus {
+								  // Some visual style
+							   }
+										   </code></pre>
+						</div>
+						<div class="flex-grid fragment">
+						<pre class="flex-col"><code class="html" data-trim="">
+						<span>Name:</span>
+						
+						<input type="text" />
+						</code></pre>
+						<pre class="flex-col"><code class="html" data-trim="">
+						&lt;label htmlFor="nameInput"&gt;
+							Name:
+						&lt;/label&gt;
+						
+						&lt;input id="nameInput"
+							   type="text" /&gt;
+						</code></pre>
+						</div>
+						<div class="flex-grid fragment">
+						<pre class="flex-col"><code class="html" data-trim="">
+						<button>
+							&lt;i className="save-icon" /&gt;
+						</button>
+						</code></pre>
+						<pre class="flex-col"><code class="html" data-trim="">
+						<button aria-label="Save">
+							&lt;i className="save-icon"
+							   aria-hidden="true" /&gt;
+						</button>
+						</code></pre>
+						</div>
+				</section>
+				<section data-background-image="assets/no-ok.gif">
+					<div class="flex-grid">
+						<div class="flex-col" style="background: transparent;">
+						<h2 style="text-align: center; margin: 0;">Inaccessible</h2>
+						</div>
+						<div class="flex-col" style="background: transparent;">
+						<h2 style="text-align: center; margin: 0;">Accessible</h2>
+						</div>
+						</div>
+						<div class="flex-grid fragment">
+									 <pre class="flex-col"><code class="html" data-trim="">
+									&lt;div className="button-style"
+										 onClick={onClickHandler}&gt;
+										 Press Me
+									&lt;/div&gt;
+										   </code></pre>
+								<pre class="flex-col"><code class="html" data-trim="">
+								&lt;button onClick={onClickHandler}&gt;
+									 Press Me
+								&lt;/button&gt;
+									   </code></pre>
+						</div>
+						<div class="flex-grid fragment">
+						<pre class="flex-col"><code class="html" data-trim="">
+						&lt;a onClick={onClickHandler}&gt;
+							Click me
+						&lt;/a&gt;
+						</code></pre>
+						<pre class="flex-col"><code class="html" data-trim="">
+						<a href="/some/application/url">
+							Navigate somewhere
+						</a>
+						</code></pre>
+						</div>
+						<div class="flex-grid fragment">
+						<div class="flex-col code-shadow">
+						<img src="assets/badcontrastbutton.png" alt="A button with dark blue text on a darker blue background showing bad contrast." style="box-shadow: none;" />
+						</div>
+						<div class="flex-col code-shadow">
+						<img src="assets/goodcontrastbutton.png" alt="A button with dark blue text on a light blue background showing good contrast." style="box-shadow: none;" />
+						</div>
+						</div>
+				</section>
+
+				<section data-background-image="assets/nekobasu.gif">
+					<h2>helper tools</h2>
+					<h3 class="fragment fade-in-then-semi-out">you need both:</h3>
+					<h4 class="fragment fade-in-then-semi-out">a linter for your jsx</h4>
+					<h4 class="fragment fade-in-then-semi-out">and something to check the generated DOM</h4>
+				</section>
+				<section data-background-image="assets/gute05.gif">				
+				<h2 class="fragment">The React Accessibility Doc</h2>
+<img class="shadow fragment" src="assets/reactdocs.png" alt="Screen capture of the React accessibility docs page." />
+<a class="fragment" href="https://reactjs.org/docs/accessibility.html">reactjs.org/docs/accessibility.html</a>
+				</section>
+
+				<section data-background-image="assets/gute04.gif">
+					<h2 class="fragment">eslint-plugin-jsx-a11y</h2>
+<img class="shadow nomax fragment" src="assets/jsxa11yIDE.png" style="margin-left:15px" alt="Screen capture of eslint-plugin-jsx-a11y IDE integration." />
+<br />
+</section>
+<section data-background-image="assets/gute06.gif">
+	<h2 class="fragment">eslint-plugin-jsx-a11y</h2>
+<h4 class="fragment">More than 30 ESLINT a11y checks</h4>
+<h4 class="fragment">Rules are configurable</h4>
+<h4 class="fragment">IDE support</h4>
+<h4 class="fragment">a11y issues become build warnings</h4>
+<a class="fragment" href="https://github.com/evcohen/eslint-plugin-jsx-a11y">github.com/evcohen/eslint-plugin-jsx-a11y</a>
+				</section>				
+				<section data-background-image="assets/gute18.gif">
+					<h2 class="fragment">react-axe</h2>
+<img class="shadow fragment" src="assets/react-axe.png" style="width:80%; margin-left: 20px;" alt="Screen capture of aXe audit in browser." />
+
+<a class="fragment" href="https://github.com/dequelabs/react-axe">github.com/dequelabs/react-axe</a>
+				</section>
+
+				<section data-background-image="assets/gute17.gif">
+					<h2 class="fragment">Test with your keyboard</h2>
+<h4 class="fragment">Use TAB, SHIFT + TAB, ENTER and the arrow keys.</4>
+<img class="shadow fragment" src="assets/keyboard.jpg" style="width:50%;" alt="Keyboard with blue backlighting." />
+				</section>
+
+				<section data-background-image="assets/gute21.gif">
+					<h2 class="fragment">React Aria Live announcer</h2>
+					<a class="fragment" href="https://github.com/AlmeroSteyn/react-aria-live">https://github.com/AlmeroSteyn/react-aria-live</a>
+				</section>
+
+				<section data-background-image="assets/grommet.png">
+					<h2>Components</h2>
+					<h3 class="fragment fade-in-then-semi-out">grommet.io</h3>
+					<p class="fragment fade-in-then-semi-out">beautiful</p>
+					<p class="fragment fade-in-then-semi-out">good a11y</p>
+				</section>
+				<section data-background-image="assets/ultraman1.gif" data-background-size="contain">
+					<h2>WhatSock bootstrap-react</h2>
+					 <p class="fragment fade-in-then-semi-out">just released as beta</p>
+					 <p class="fragment fade-in-then-semi-out">strict a11y</p>
+					 <a class="fragment fade-in-then-semi-out" href="https://github.com/whatsock/bootstrap-react">https://github.com/whatsock/bootstrap-react</a>
+				</section>
+				<section data-background-image="assets/kittylaugh.gif" data-background-size="contain">
+					<h2>Now go have fun, <br />and create accessible apps!</h2>
+				</section>
+				
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
