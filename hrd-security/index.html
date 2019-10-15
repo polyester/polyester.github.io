@@ -1,305 +1,467 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>CCC protocol (WIP)</title>
-		<meta name="description" content="HRD and digital security">
-		<meta name="author" content="Paul Roeland">
+    <title>CCC protocol (WIP)</title>
+    <meta name="description" content="HRD and digital security" />
+    <meta name="author" content="Paul Roeland" />
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/ecf.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/robot-lung.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-background="img/coffee.gif">
-					<h3>Clean Clothes Campaign</h3>
-					<h3>&nbsp;</h3>
-					<h3>developing a practical approach</h3>
-					<h3>for digital security</h3>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
 
-				</section>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background="img/coffee.gif">
+          <h2>Clean Clothes Campaign</h2>
+          <br />
 
+          <h3>developing a practical approach for digital security</h3>
+        </section>
 
-				<section data-background="img/strategy.gif">
-					<h1>Aims</h1>
+        <section data-background="img/strategy.gif">
+          <h1 class="fragment">Aims</h1>
 
-<h4 class="fragment">Reduce risk to ourself and our partners</h4>
-<h4 class="fragment">Increase awareness of safety aspects</h4>
-<h4 class="fragment">Develop active threat and response model</h4>
-				</section>
-				<section data-background="img/eavesdropping.jpg">
-					<h1 >Visualize:</h1>
+          <h4 class="fragment">Reduce risk to ourself and our partners</h4>
+          <h4 class="fragment">Increase awareness of safety aspects</h4>
+          <h4 class="fragment">Develop active threat and response model</h4>
+        </section>
+        <section data-background="img/eavesdropping.jpg">
+          <h1>Visualize:</h1>
 
-<h4 class="fragment">how comfortable would I be holding this conversation with a factory owner or police officer sitting at the same table <br /><em>(content security)</em></h4>
+          <h4 class="fragment">
+            how comfortable would I be holding this conversation with a factory
+            owner or police officer sitting at the same table <br /><em
+              >(content security)</em
+            >
+          </h4>
+        </section>
+        <section data-background="img/hayden.jpg">
+          <h1 class="fragment">Next one:</h1>
+          <h4 class="fragment">
+            how comfortable would I be holding this conversation
+            <em>within sight</em> of a police officer or factory owner so they
+            know who is talking to who, when, and for how long <br /><em
+              >(metadata security)</em
+            >
+          </h4>
+          <h4 class="fragment">
+            <em>"We kill people based on metadata"</em>, Michael Hayden, NSA/CIA
+          </h4>
+        </section>
+        <section data-background="img/killbillblue.gif">
+          <h1 class="fragment">Lastly:</h1>
 
-				</section>
-				<section data-background="img/hayden.jpg">
-					<h3 >Next one:</h3>
-<h4 class="fragment">how comfortable would I be holding this conversation <em>within sight</em> of a police officer or factory owner<br /> so they know who is talking to who, when, and for how long <br /><em>(metadata security)</em></h4>
-<h4 class="fragment"><em>"We kill people based on metadata"</em>, Michael Hayden, NSA/CIA</h4>
-				</section>
-				<section data-background="img/killbillblue.gif">
-					<h3 >Lastly:</h3>
+          <h4 class="fragment">
+            does it matter if it is a factory owner, a local police officer, or
+            a high-level security service person? <br /><em
+              >(level of adversary)</em
+            >
+          </h4>
+        </section>
 
-<h4 class="fragment">does it matter if it is a factory owner, a local police officer, or a high-level security service person? <br /><em>(level of adversary)</em></h4>
-				</section>
+        <section data-background="img/turkey-coma.gif">
+          <h3 class="fragment">
+            Trade-off: comfort, practicality and security
+          </h3>
+          <h4 class="fragment">
+            how much <em>effort</em> am I prepared to spend to secure the
+            communications ?
+          </h4>
+          <h4 class="fragment">
+            can I expect the same from the other people in the conversation ?
+          </h4>
+          <h4 class="fragment">
+            can my action <em>(or lack of it)</em> HURT other people? How bad?
+          </h4>
+        </section>
+        <section data-background="img/shark.jpg">
+          <p class="fragment">
+            This analysis would ideally be made before each conversation;
+          </p>
+          <p class="fragment">
+            where that is not possible we should at least have a clear idea of
+            the risks and trade-offs that you engage in by
+            <strong>not</strong> having a secure conversation.
+          </p>
+        </section>
+        <section data-background="img/alberta.gif">
+          <h1>modes of conversation</h1>
 
-				<section data-background="img/turkey-coma.gif">
-					<h3>Trade-off: comfort, practicality and security</h3>
-<h4 class="fragment">how much <em>effort</em>  am I prepared to spend to secure the communications ?</h4>
-<h4 class="fragment">can I expect the same from the other people in the conversation ?</h4>
-<h4 class="fragment">can my action <em>(or lack of it)</em> HURT other people? How bad? </h4>
+          <h4 class="fragment">
+            synchronous <em>(same time)</em> or asynchronous
+          </h4>
+          <h4 class="fragment">chat, files, voice, video</h4>
+          <h4 class="fragment">
+            one-on-one, within a close-knit group, with a more open group
+          </h4>
+        </section>
+        <section data-background="img/city.gif">
+          <p>
+            A further complication is that the threat model can be different per
+            country/region, and that there is a distinction between
+            <em>security</em> and <em>privacy.</em>
+          </p>
+        </section>
+        <section data-background="img/bike.gif">
+          <h3>Status</h3>
+          <p>pilot program in Pakistan in local language</p>
+          <p>courses at Regional Meetings</p>
+          <p>but it will need regular attention</p>
+        </section>
 
-				</section>
-				<section data-background="img/shark.jpg">
-				<p>This analysis would ideally be made before each conversation; </p><p>where that is not possible we should at least have a clear idea of the risks and trade-offs that you engage in by <strong>not</strong> having a secure conversation.</p>
+        <section data-background="img/kittens-science.gif">
+          <h1 class="fragment">Practical implementation</h1>
+        </section>
+        <section data-background="img/iceland.gif">
+          <h3>Low hanging fruit</h3>
 
-				</section>
-				<section data-background="img/alberta.gif">
-					<h3>modes of conversation</h3>
+          <h4 class="fragment">
+            SMS communication and chat: should be replaced completely by using
+            <strong><a href="https://whispersystems.org">Signal</a></strong>
+          </h4>
+          <h4 class="fragment">
+            when both sides are on mobile, one-on-one voice can be replaced by
+            Signal as well
+          </h4>
+        </section>
+        <section data-background="img/amb1.gif">
+          <h3>Intermezzo: chat clients</h3>
+          <h4 class="fragment">Signal (safe, some metadata)</h4>
+          <h4 class="fragment">Whatsapp (safe, lots of metadata)</h4>
+          <h4 class="fragment">Wire (safe, does not need phone nr)</h4>
+          <h4 class="fragment">Treema (OK), Telegram (BROKEN!)</h4>
+          <h4 class="fragment">worst: Skype, Facebook messenger</h4>
+        </section>
 
-<h4 class="fragment">synchronous <em>(same time)</em> or asynchronous</h4>
-<h4 class="fragment">chat, files, voice, video</h4>
-<h4 class="fragment">one-on-one, within a close-knit group, with a more open group</h4>
+        <section data-background="img/urgent.gif">
+          <h3>Urgent, because crap security:</h3>
+          <h3 class="fragment">Skype replacement</h3>
 
-				</section>
-				<section data-background="img/city.gif">
-<p>A further complication is that the threat model can be different per country/region, and that there is a distinction between <em>security</em> and <em>privacy.</em></p>
-				</section>
-				<section data-background="img/bike.gif">
-					<h3>Status</h3>
-<p>pilot program in Pakistan in local language</p>
-<p>courses at Regional Meetings</p>
-<p>but it will need regular attention</p>
-				</section>
+          <h4 class="fragment">
+            <a href="https://meet.jit.si">meet.jit.si</a>,
+            <a href="http://talky.io">talky.io</a>
+          </h4>
+          <h4 class="fragment">
+            <a href="http://zoom.us">Zoom</a>, (paid service, but good)
+          </h4>
+          <h4 class="fragment">
+            <a href="https://spreed.me">Nextcloud with talk add-on</a>
+          </h4>
+          <h4 class="fragment">
+            <a href="https://discordapp.com">discordapp.com</a> (voice &amp;
+            chat)
+          </h4>
+          <h4 class="fragment">
+            discuss: can Hangouts play a role as fallback?
+          </h4>
+        </section>
+        <section data-background="img/facepalm-uhura.gif">
+          <h3 class="fragment">Really...</h3>
+          <h3 class="fragment">Facebook Messenger???</h3>
+        </section>
+        <section data-background="img/email.gif">
+          <h3 class="fragment">Email</h3>
+          <p class="fragment">
+            This is difficult, because of learned behaviour, and the fact that
+            email is a mixture of one-on-one and group conversation.
+          </p>
+          <p class="fragment">
+            It would be better to replace group email communication with more
+            modern forms (<a href="https://rocket.chat/" )>Rocketchat</a> or
+            <a href="www.mattermost.org">mattermost</a> )
+          </p>
+        </section>
+        <section data-background="img/rain.gif">
+          <p>
+            one-on-one (and small group) secure email should use GPG, but
+            barrier to use is relatively high, although
+            <strong><a href="https://www.mailvelope.com">mailvelope</a></strong>
+            works for important webmail providers (gmail, yahoo) and
+            <strong><a href="https://www.enigmail.net">enigmail</a></strong> for
+            imap.
+          </p>
+        </section>
+        <section data-background="img/typing.gif">
+          <p class="fragment">
+            But ultimately, the key to more email security is
+          </p>
+          <h3 class="fragment"><strong>less email</strong></h3>
+        </section>
+        <section data-background="img/discoball.gif">
+          <h3 class="fragment">Intranet</h3>
+          <p class="fragment">
+            We have an Intranet. This could potentially replace quite some email
+            and other traffic, has tools for calendar, to-do lists
+          </p>
+        </section>
+        <section data-background="img/yellowstone.gif">
+          <h3>very high security:</h3>
 
-				<section data-background="img/kittens-science.gif">
-					<h3>Practical implementation</h3>
+          <h4 class="fragment">
+            chat and file: <a href="https://crypho.com">crypho.com</a> (paid,
+            CCC has account already)
+          </h4>
+          <h4 class="fragment">chat (beta status): TOR messenger</h4>
+          <h4 class="fragment">
+            <a href="https://www.torproject.org/projects/torbrowser.html.en"
+              >TOR browser</a
+            >
+            for secure browsing
+          </h4>
+          <h4 class="fragment">
+            <a href="https://tails.boum.org/">TAILS</a> secure operating system
+          </h4>
+          <h4 class="fragment">
+            <a href="https://securedrop.org">Securedrop</a> (whistleblower
+            reporting)
+          </h4>
+          <h4 class="fragment">... and more (but ask first!)</h4>
+        </section>
+        <section data-background="img/subway.gif">
+          <h3 class="fragment">
+            Any in-transit security obtained is <em>meaningless</em> if the
+            security of the partners and their devices is compromised.
+          </h3>
+        </section>
 
-				</section>
-				<section data-background="img/iceland.gif">
-					<h3>Low hanging fruit</h3>
+        <section data-background="img/surprisekitten.gif">
+          <h1 class="fragment">Passwords?</h1>
+          <h2 class="fragment">
+            <em>nobody remembers more than three, so let's re-use them</em>
+          </h2>
+        </section>
+        <section data-background="img/snow.gif">
+          <h1>Password security</h1>
+          <h2 class="fragment">
+            <a href="https://haveibeenpwned.com/"
+              >https://haveibeenpwned.com/</a
+            >
+          </h2>
+        </section>
+        <section data-background="img/yosemite.gif">
+          <h3>Password security</h3>
 
-<h4 class="fragment">SMS communication and chat: should be replaced completely by using <strong><a href="https://whispersystems.org">Signal</a></strong></h4>
-<h4 class="fragment">when both sides are on mobile, one-on-one voice can be replaced by Signal as well</h4>
+          <h4 class="fragment">still the #1 way of attack</h4>
+          <h4 class="fragment">
+            password <strong>re-use</strong> is the main problem
+          </h4>
+          <h4 class="fragment">"entropy" wins: longer = better</h4>
+          <h4 class="fragment">
+            use a password manager.
+            <a href="https://bitwarden.com/">Bitwarden</a>,
+            <a href="https://https://lastpass.com/"
+              >Lastpass, <a href="http://keepass.info/">KeePass</a></a
+            >
+          </h4>
+          <h4 class="fragment">
+            enable 2-factor for your most important accounts
+          </h4>
+        </section>
+        <section><img width="90%" src="img/password_strength.png" /></section>
+        <section data-background="img/worlddominationcat.gif">
+          <h2 class="fragment">Office security</h2>
 
-				</section>
-				<section data-background="img/amb1.gif">
-					<h3>Intermezzo: chat clients</h3>
-					<h4 class="fragment">Signal (safe, some metadata)</h4>
-					<h4 class="fragment">Whatsapp (safe, lots of metadata)</h4>
-					<h4 class="fragment">Treema (OK), Telegram (BROKEN!!)</h4>
-					<h4 class="fragment">worst: Skype, Facebook messenger</h4>
-				</section>
+          <h4 class="fragment">Operating System security</h4>
+          <h4 class="fragment">
+            also devices
+            <em
+              ><br />(any tablet shared with a teenager
+              <strong>will</strong> contain spyware)</em
+            >
+          </h4>
+          <h4 class="fragment">backup often!!</h4>
+          <h4 class="fragment">
+            contingency in case of government raid (or fire...)
+          </h4>
+          <h4 class="fragment">intrusion detection</h4>
+        </section>
+        <section data-background="img/fuse.jpg">
+          <h1>OS: Windows</h1>
 
-				<section data-background="img/urgent.gif">
-					<h3>Urgent, because crap security:</h3>
-					<h3 class="fragment">Skype replacement</h3>
+          <h4 class="fragment">
+            Do not circumvert security measures
+          </h4>
+          <h4 class="fragment">
+            Win10 is <em>really bad</em> for privacy, reasonable on security
+          </h4>
+          <h4 class="fragment">
+            Virusscanner is still needed
+          </h4>
+          <h4 class="fragment"><em>Ransomware</em> is main threat</h4>
+          <h4 class="fragment">
+            Turn off Flash, use alternative PDF reader
+          </h4>
+        </section>
+        <section data-background="img/spongebob.gif">
+          <h1 class="fragment" style="color:#FF0025">OSX and Linux</h1>
+          <h2 class="fragment" style="color:#FF0025">
+            much safer, but don't believe you're invulnerable!!
+          </h2>
+        </section>
+        <section data-background="img/lava.gif">
+          <h1 class="fragment">Simple things to do:</h1>
+          <h2 class="fragment">adblocker (ublock origin)</h2>
+          <h2 class="fragment">clean cache, cookies, history</h2>
+          <h2 class="fragment">check your social media settings</h2>
+        </section>
 
-<h4 class="fragment"><a href="https://meet.jit.si">meet.jit.si</a>, <a href="http://talky.io">talky.io</a></h4>
-<h4 class="fragment"><a href="http://zoom.us">Zoom</a>, (paid service, but good)</h4>
-<h4 class="fragment"><a href="https://spreed.me">Nextcloud with talk add-on</a></h4>
-<h4 class="fragment"><a href="https://discordapp.com">discordapp.com</a> (voice &amp; chat)</h4>
-<h4 class="fragment">discuss: can Hangouts play a role as fallback?</h4>
+        <section data-background="img/cloud2.jpg">
+          <h2 class="fragment">Oh yeah, that 'cloud' thing</h2>
+        </section>
+        <section data-background="img/glasses.gif">
+          <h2>... but but but ... Googledocs?</h2>
+          <h3 class="fragment">default settings are <em>dangerous</em></h3>
+          <h3 class="fragment">
+            Finally, viable alternatives are starting to appear
+          </h3>
+        </section>
+        <section data-background="img/brain.gif">
+          <h2 class="fragment">Travel security (phones, laptops)</h2>
 
-				</section>
-				<section data-background="img/facepalm-uhura.gif">
-				<h3>Really... </h3>
-				<h3 class="fragment">Facebook Messenger???</h3>
-				</section>
-				<section data-background="img/email.gif">
-					<h3>Email</h3>
-<p>This is difficult, because of learned behaviour, and the fact that email is a mixture of one-on-one and group conversation.</p><p> It would be better to replace group email communication with more modern forms (<a href="https://rocket.chat/")>Rocketchat</a> or <a href="www.mattermost.org">mattermost</a> )</p>
-				</section>
-				<section data-background="img/rain.gif">
-<p>one-on-one (and small group) secure email should use GPG, but barrier to use is relatively high, although <strong><a href="https://www.mailvelope.com">mailvelope</a></strong> works for important webmail providers (gmail, yahoo) and <strong><a href="https://www.enigmail.net">enigmail</a></strong> for imap.</p>
-				</section>
-				<section data-background="img/typing.gif">
-<p>But ultimately, the key to more email security is </p>
-<h3 class ="fragment"><strong>less email</strong></h3>
-				</section>
-				<section data-background="img/discoball.gif">
-					<h3>Intranet</h3>
-<p>We have a new, much more social Intranet. This could potentially replace quite some email and other traffic, has tools for calendar, to-do lists</p>
-				</section>
-				<section data-background="img/yellowstone.gif">
-					<h3>very high security:</h3>
+          <h4 class="fragment">
+            do you know what documents are on your laptop?
+          </h4>
+          <h4 class="fragment">do you <strong>need</strong> all of them?</h4>
+          <h4 class="fragment">would it be bad if it got stolen by a thief?</h4>
+          <h4 class="fragment">
+            would it be bad if it got stolen by government?
+          </h4>
+        </section>
+        <section data-background="img/boots.gif">
+          <h1 class="fragment">USB sticks</h1>
 
-<h4 class="fragment">chat and file: <a href="https://crypho.com">crypho.com</a> (paid, CCC has account already)</h4>
-<h4 class="fragment">chat (beta status): TOR messenger</h4>
-<h4 class="fragment"><a href="https://www.torproject.org/projects/torbrowser.html.en">TOR browser</a> for secure browsing</h4>
-<h4 class="fragment"><a href="https://tails.boum.org/">TAILS</a> secure operating system</h4>
-<h4 class="fragment"><a href="https://securedrop.org">Securedrop</a> (whistleblower reporting)</h4>
-<h4 class="fragment">... and more (but ask first!)</h4>
+          <h4 class="fragment">
+            reformat regularly, at least before any border crossing
+          </h4>
+          <h4 class="fragment">encrypted part</h4>
+          <h4 class="fragment">hardware encrypted</h4>
+        </section>
 
-				</section>
-				<section data-background="img/subway.gif">
-					<h3>Any in-transit security obtained is <em>meaningless</em> if the security of the partners and their devices is compromised.</h3>
+        <section data-background="img/chaplin.gif">
+          <h2>use of mobile as reporting tool</h2>
 
-				</section>
+          <h3 class="fragment">strongbox</h3>
+          <h3 class="fragment">obscuracam</h3>
+          <h3 class="fragment">storymaker app</h3>
+        </section>
+        <section data-background="img/escher.gif">
+          <h1 class="fragment">
+            keep websites safe
+          </h1>
 
-				<section data-background="img/surprisekitten.gif">
-				<h1>Passwords?</h1>
-				<h2 class="fragment"><em>nobody remembers more than 3, <br/>so let's re-use them</em></h2>
-				</section>
-				<section data-background="img/snow.gif">
-				<h1>Password security</h1>
-				<h2 class="fragment"><a href="https://haveibeenpwned.com/">https://haveibeenpwned.com/</a></h2>
-				</section>
-				<section data-background="img/yosemite.gif">
-				<h3>Password security</h3>
+          <h2 class="fragment">
+            Keep software updated
+          </h2>
+          <h2 class="fragment">
+            Prevent against DDOS attacks: <br /><a
+              href="http://www.cloudflare.com"
+              >Cloudflare</a
+            >
+            or <a href="https://deflect.ca/">Deflect</a>
+          </h2>
+          <h2 class="fragment">
+            NOT only a Facebook page,<br />it WILL disappear one day..
+          </h2>
+        </section>
 
-				<h4 class="fragment">still the #1 way of attack</h4>
-				<h4 class="fragment">password <strong>re-use</strong> is the main problem</h4>
-				<h4 class="fragment">"entropy" wins: longer = better </h4>
-				<h4 class="fragment">use a password manager. <a href="https://spideroak.com/solutions/encryptr">encryptr</a>, <a href="https://https://lastpass.com/">Lastpass, <a href="http://keepass.info/">KeePass</a></a></h4>
-				<h4 class="fragment">enable 2-factor for your most important accounts</h4>
+        <section data-background="img/badsecurity.gif">
+          <h1 class="fragment">recap:</h1>
+          <h2 class="fragment">Security is a process</h2>
+          <h2 class="fragment">Keep informed</h2>
+          <h3 class="fragment">
+            <em>bad</em> security is worse than no security
+          </h3>
+        </section>
+        <section data-background="img/help.gif">
+          <h2 class="fragment">Help when under threat:</h2>
+          <h2 class="fragment">
+            <a href="https://www.protectdefenders.eu/en/about.html"
+              >Protect Defenders<br />
+              (grants, relocation, emergency)</a
+            >
+          </h2>
+          <h2 class="fragment">
+            <a href="https://www.digitaldefenders.org/"
+              >Digital Defenders Partnership <br />
+              (grants, training)</a
+            >
+          </h2>
+        </section>
+        <section data-background="img/treadmill.gif">
+          <h1 class="fragment">Further links:</h1>
+          <h4 class="fragment">
+            <a href="https://securityinabox.org/en">Security in a box</a>
+          </h4>
+          <h4 class="fragment">
+            <a
+              href="https://www.frontlinedefenders.org/en/programme/digital-protection"
+              >Frontline defenders</a
+            >
+          </h4>
+          <h4 class="fragment"><a href="https://guardianproject.info/">Guardian Project</a></h4>
+          <h4 class="fragment"><a href="https://panicbutton.io/">Panicbutton.io</a></h4>
+          <h4 class="fragment">
+            <a
+              href="https://www.amnesty.org/download/Documents/ASA3383662018ENGLISH.PDF"
+              >Amnesty Pakistan study</a
+            >
+          </h4>
+        </section>
+        <section data-background="img/escalator.gif">
+          <h1 class="fragment">Most of all:</h1>
+          <h2 class="fragment">Be aware</h2>
+          <h2 class="fragment">Don't Despair</h2>
+          <h3 class="fragment">
+            It does not have to be perfect,<br />
+            just better than yesterday
+          </h3>
+        </section>
+        <section data-background="img/worthit.gif">
+          <h1>Because our struggle<br />is worth it...</h1>
+          <h2 class="fragment">thanks</h2>
+        </section>
+      </div>
+    </div>
 
-				</section>
-				<section><img width=90% src="img/password_strength.png">
-				</section>
-				<section data-background="img/worlddominationcat.gif">
-					<h2>Office security</h2>
+    <script src="js/reveal.js"></script>
 
-<h4 class="fragment">OS security</h4>
-<h4 class="fragment">also devices <em><br />(any tablet shared with a teenager <strong>will</strong> contain spyware)</em></h4>
-<h4 class="fragment">backup often!!</h4>
-<h4 class="fragment">contingency in case of government raid (or fire...)</h4>
-<h4 class="fragment">intrusion detection</h4>
-
-				</section>
-				<section data-background="img/fuse.jpg">
-								<h1 style="color:#4A00C6">OS: Windows</h1>
-
-				<h4 class="fragment" style="color:#4A00C6">Do not circumvert security measures</h4>
-				<h4 class="fragment"  style="color:#4A00C6">Win10 is <em>really bad</em> for
-				privacy, reasonable on security</h4>
-				<h4 class="fragment" style="color:#4A00C6">Virusscanner is still needed</h4>
-				<h4 class="fragment" style="color:#4A00C6"><em>Ransomware</em> is main threat</h4>
-				<h4 class="fragment" style="color:#4A00C6">Turn off Flash, use alternative PDF reader</h4>
-
-
-				</section>
-				<section data-background="img/spongebob.gif">
-				<h1 style="color:#FF0025">OSX and Linux</h1>
-				<h2 style="color:#FF0025">much safer, but don't believe you're invulnerable!!</h2>
-
-				</section>
-				<section data-background="img/lava.gif">
-					<h1 >Simple things to do:</h1>
-					<h2 class="fragment">adblocker (ublock origin)</h2>
-					<h2 class="fragment">clean cache, cookies, history</h2>
-					<h2 class="fragment">check your social media settings</h2>
-	
-					</section>
-
-				<section data-background="img/cloud2.jpg">
-				<h2>Oh yeah, that 'cloud' thing</h2g>
-
-				</section>
-				<section data-background="img/glasses.gif">
-				<h2>... but but but ... Googledocs?</h2>
-				<h3 class="fragment">default settings are <em>dangerous</em></h3>
-				<h3 class="fragment">Finally, viable alternatives are starting to appear</h3>
-				</section>
-				<section data-background="img/brain.gif">
-					<h2>Travel security (phones, laptops)</h2>
-
-<h4 class="fragment">do you know what documents are on your laptop?</h4>
-<h4 class="fragment">do you <strong>need</strong> all of them?</h4>
-<h4 class="fragment">would it be bad if it got stolen by a thief?</h4>
-<h4 class="fragment">would it be bad if it got stolen by government?</h4>
-
-				</section>
-				<section data-background="img/boots.gif">
-					<h1>USB sticks</h1>
-
-<h4 class="fragment">reformat regularly, at least before any border crossing</h4>
-<h4 class="fragment">encrypted part</h4>
-<h4 class="fragment">hardware encrypted</h4>
-				</section>
-
-				<section data-background="img/chaplin.gif">
-					<h2>use of mobile as reporting tool</h2>
-
-<h3 class="fragment">strongbox</h3>
-<h3 class="fragment">obscuracam</h3>
-<h3 class="fragment">storymaker app</h3>
-
-				</section>
-				<section data-background="img/escher.gif">
-				<h1 style="color:rgb(250, 0, 196)">keep websites safe</h1>
-
-				<h2 class="fragment" style="color:rgb(250, 0, 196)">Keep software updated</h2>
-				<h2 class="fragment" style="color:rgb(250, 0, 196)">Prevent against DDOS attacks: <br /><a href="http://www.cloudflare.com">Cloudflare</a> or <a href="https://deflect.ca/">Deflect</a></h2>
-				<h2 class="fragment" style="color:rgb(250, 0, 196)">NOT only a Facebook page,<br />it WILL disappear one day..</h2>
-				</section>
-
-				<section data-background="img/badsecurity.gif">
-					<h1>recap:</h1>
-<h2 class="fragment">Security is a process</h2>
-<h2 class="fragment">Keep informed</h2>
-<h3 class="fragment"><em>bad</em> security is worse than no security</h3>
-				</section>
-				<section data-background="img/help.gif">
-					<h2 style="color: #000">Help when under threat:</h2>
-					<h2 class="fragment"><a  style="color: #000" href="https://www.protectdefenders.eu/en/about.html">Protect Defenders<br /> (grants, relocation, emergency)</a></h2>
-					<h2 class="fragment"><a  style="color: #000" href="https://www.digitaldefenders.org/">Digital Defenders Partnership <br /> (grants, training)</a></h2>
-					
-					
-				</section>
-				<section data-background="img/treadmill.gif">
-					<h1>Further links:</h1>
-					<h2><a href="https://securityinabox.org/en">Security in a box</a></h2>
-					<h2><a href="https://www.frontlinedefenders.org/en/programme/digital-protection">Frontline defenders</a></h2>
-					<h2><a href="https://guardianproject.info/">Guardian Project</a></h2>
-					<h2><a href="https://panicbutton.io/">Panicbutton.io</a></h2>
-					<h2><a href="https://www.amnesty.org/download/Documents/ASA3383662018ENGLISH.PDF">Amnesty Pakistan study</a></h2>
-				</section>
-				<section data-background="img/escalator.gif">
-					<h1>Most of all:</h1>
-					<h2 class="fragment">Be aware</h2>
-					<h2 class="fragment">Don't Despair</h2>
-					<h3 class="fragment">It does not have to be perfect,<br /> just better than yesterday</h3>
-				</section>
-				<section data-background="img/worthit.gif">
-					<h1>Because our struggle<br />is worth it...</h1>
-					<h2 class="fragment">thanks</h2>
-
-				</section>
-			</div>
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        controls: true,
+        progress: false,
+        margin: 0.2,
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true }
+        ]
+      });
+    </script>
+  </body>
 </html>
